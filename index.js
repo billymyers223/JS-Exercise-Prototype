@@ -98,15 +98,18 @@ function Baby(name, age, favoriteToy) {
   this.age = age;
   this.favoriteToy = favoriteToy;
 }
-
+Baby.prototype = Object.create(Person.prototype);
+Baby.prototype.play = function(){
+    return `$Playing with ${this.favoriteToy}`;
+}
 
 /* 
   TASK 4
   In your own words explain the four principles for the "this" keyword below:
-  1. 
-  2. 
-  3. 
-  4. 
+  1. Window binding - 'this' will return a the global object in node or undefined if it isn't given context
+  2. Implicit binding - Invoking a function binds it and refers to 'this'.
+  3. Explicit binding - Refers to binding 'this' to a function by .call, .apply, or .bind
+  4. New binding - Constructs a new object and binds 'this' to it.
 */
 
 
